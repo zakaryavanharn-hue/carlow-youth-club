@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAA &amp; Youth Clubs in Carlow</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- SITE NAV -->
+<nav class="site-nav" aria-label="Site pages">
+  <a href="index.html" class="active">Home</a>
+  <a href="map.html">Club Map</a>
+  <a href="join.html">How to Join</a>
+  <a href="profiles.html">Club Profiles</a>
+  <a href="gallery.html">Photos &amp; Video</a>
+  <a href="faq.html">FAQ</a>
+  <a href="events.html">Events</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="register.html">Pre-Register</a>
+</nav>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-badge" data-i18n="header_badge">Co. Carlow, Ireland &middot; GAA &amp; More</div>
+  <h1 data-i18n="site_title">GAA &amp; Youth Clubs<br><span>in County Carlow</span></h1>
+  <p class="header-intro" data-i18n="site_intro">
+    A comprehensive guide to GAA, sport, arts, music, and more for young people and international students across County Carlow — from the Barrow Valley to the Blackstairs Mountains. Whether you're arriving from abroad or already here, there's a club for everyone.
+  </p>
+  <button class="guide-link" onclick="openGuideOrModal()" aria-label="Browse the full PDF guide">
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4 0h5.5L14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5 0v4h4L9 0zM6 9H5v4h1v-1.5h1a1.5 1.5 0 0 0 0-3H6zm0 1h1a.5.5 0 0 1 0 1H6V10zm4-1H9v4h1a2 2 0 0 0 0-4zm0 1a1 1 0 0 1 0 2H10V9h.5z"/></svg>
+    Browse the Full Guide
+  </button>
+  <button class="guide-link" onclick="openContacts()" aria-label="View all club contacts" style="margin-left:18px">
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/></svg>
+    Club Contacts
+  </button>
+
+  <!-- LANGUAGE BAR -->
+  <div class="lang-bar" role="navigation" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('en')" data-lang="en" title="English">&#127468;&#127463; EN</button>
+    <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Espa&ntilde;ol">&#127466;&#127480; ES</button>
+    <button class="lang-btn" onclick="setLang('fr')" data-lang="fr" title="Fran&ccedil;ais">&#127467;&#127479; FR</button>
+    <button class="lang-btn" onclick="setLang('de')" data-lang="de" title="Deutsch">&#127465;&#127466; DE</button>
+    <button class="lang-btn" onclick="setLang('it')" data-lang="it" title="Italiano">&#127470;&#127481; IT</button>
+    <button class="lang-btn" onclick="setLang('pt')" data-lang="pt" title="Portugu&ecirc;s">&#127463;&#127479; PT</button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang="zh" title="中文">&#127464;&#127475; 中文</button>
+  </div>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num">16+</span><span class="stat-label" data-i18n="stat_categories">Categories</span></div>
+  <div class="stat-item"><span class="stat-num">40+</span><span class="stat-label" data-i18n="stat_clubs">Clubs</span></div>
+  <div class="stat-item"><span class="stat-num" data-i18n="stat_ages">Ages 5–26</span><span class="stat-label" data-i18n="stat_welcome">All Welcome</span></div>
+  <div class="stat-item"><span class="stat-num" data-i18n="stat_free">Free</span><span class="stat-label" data-i18n="stat_enquire">To Enquire</span></div>
+</div>
+
+<!-- QUICK LINKS TO SECTIONS -->
+<div style="text-align:center;padding:28px 20px 8px;">
+  <p style="font-family:var(--mono);font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">Explore the site:</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:700px;margin:0 auto;">
+    <a href="map.html" style="padding:10px 20px;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-family:var(--serif);font-size:0.88rem;font-weight:700;">&#128506; Club Map</a>
+    <a href="join.html" style="padding:10px 20px;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-family:var(--serif);font-size:0.88rem;font-weight:700;">&#128203; How to Join</a>
+    <a href="profiles.html" style="padding:10px 20px;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-family:var(--serif);font-size:0.88rem;font-weight:700;">&#127942; Club Profiles</a>
+    <a href="gallery.html" style="padding:10px 20px;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-family:var(--serif);font-size:0.88rem;font-weight:700;">&#128247; Photos &amp; Video</a>
+    <a href="faq.html" style="padding:10px 20px;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-family:var(--serif);font-size:0.88rem;font-weight:700;">&#10067; FAQ</a>
+    <a href="events.html" style="padding:10px 20px;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-family:var(--serif);font-size:0.88rem;font-weight:700;">&#128197; Events</a>
+    <a href="testimonials.html" style="padding:10px 20px;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-family:var(--serif);font-size:0.88rem;font-weight:700;">&#128172; Testimonials</a>
+    <a href="register.html" style="padding:10px 20px;background:var(--gold);color:var(--text);border-radius:var(--radius);text-decoration:none;font-family:var(--serif);font-size:0.88rem;font-weight:700;">&#128221; Pre-Register</a>
+  </div>
+</div>
+
+<!-- MAIN ACTIVITY BROWSER -->
+<main class="main">
+  <div class="section-header">
+    <div class="section-title" data-i18n="main_title">What's available</div>
+    <div class="section-subtitle" data-i18n="main_subtitle">Tap any activity for club contacts &middot; hover for details on desktop</div>
+  </div>
+
+  <!-- AGE FILTERS -->
+  <div class="filter-row">
+    <span class="filter-label" data-i18n="filter_label">Filter by age:</span>
+    <button class="filter-btn active" data-age="all" onclick="setFilter('all', this)" data-i18n="filter_all">All ages</button>
+    <button class="filter-btn" data-age="young" onclick="setFilter('young', this)" data-i18n="filter_young">Ages 5–12</button>
+    <button class="filter-btn" data-age="teen" onclick="setFilter('teen', this)" data-i18n="filter_teen">Ages 11–15</button>
+    <button class="filter-btn" data-age="older" onclick="setFilter('older', this)" data-i18n="filter_older">Ages 14+</button>
+  </div>
+
+  <!-- SPORT SECTION -->
+  <div class="category-block">
+    <div class="category-label">
+      <div class="category-icon">&#9917;</div>
+      <span class="category-name" data-i18n="cat_field">Field &amp; Team Sports</span>
+    </div>
+    <div class="pills-row">
+      <button class="pill" data-page="2" data-ages="all,young,teen,older" onclick="openModal(2, this)" style="animation-delay:0.03s">Soccer<span class="tooltip">Association football played on grass. Carlow has clubs for all ages from under-6, welcoming boys and girls.</span></button>
+      <button class="pill" data-page="8" data-ages="all,young,teen,older" onclick="openModal(8, this)" style="animation-delay:0.05s">GAA Football<span class="tooltip">Gaelic Athletic Association football — Ireland's national sport. Played with a round ball, mix of soccer and rugby rules. Uniquely Irish and free to play.</span></button>
+      <button class="pill" data-page="8" data-ages="all,young,teen,older" onclick="openModal(8, this)" style="animation-delay:0.07s">Hurling<span class="tooltip">One of the world's oldest field sports, unique to Ireland. Played with a curved stick (hurley) and a small ball (sliotar). Incredibly fast and exciting.</span></button>
+      <button class="pill" data-page="8" data-ages="all,young,teen,older" onclick="openModal(8, this)" style="animation-delay:0.09s">Camogie<span class="tooltip">The girls' version of hurling, played to the same rules. One of the fastest-growing sports for young women in Ireland.</span></button>
+      <button class="pill" data-page="8" data-ages="all,young,teen,older" onclick="openModal(8, this)" style="animation-delay:0.11s">Ladies Football<span class="tooltip">Gaelic football for girls and women. Hugely popular across Ireland with competitive leagues from under-8 to senior.</span></button>
+      <button class="pill" data-page="16" data-ages="all,young,teen,older" onclick="openModal(16, this)" style="animation-delay:0.13s">Rugby<span class="tooltip">Contact team sport played with an oval ball. Carlow RFC has a minis section (ages 6–12) with tag rugby (non-contact) for younger players.</span></button>
+      <button class="pill" data-page="8" data-ages="all,young,teen,older" onclick="openModal(8, this)" style="animation-delay:0.15s">Handball<span class="tooltip">A uniquely Irish sport played by hitting a small ball against a wall. One of the world's oldest sports — Carlow has excellent courts and strong youth sections.</span></button>
+      <button class="pill" data-page="3" data-ages="all,teen,older" onclick="openModal(3, this)" style="animation-delay:0.17s">Basketball<span class="tooltip">Team sport played on a court, scoring by shooting through a hoop. SETU Carlow offers top-quality coaching with competitive teams at regional and national level.</span></button>
+      <button class="pill" data-page="3" data-ages="all,teen,older" onclick="openModal(3, this)" style="animation-delay:0.19s">Volleyball<span class="tooltip">Team sport played over a net. Carlow Volleyball Club welcomes teens and young adults, with both boys and girls competing at county level.</span></button>
+    </div>
+  </div>
+
+  <!-- INDIVIDUAL SPORTS -->
+  <div class="category-block">
+    <div class="category-label">
+      <div class="category-icon">&#129355;</div>
+      <span class="category-name" data-i18n="cat_individual">Individual Sports</span>
+    </div>
+    <div class="pills-row">
+      <button class="pill" data-page="13" data-ages="all,young,teen,older" onclick="openModal(13, this)" style="animation-delay:0.03s">Athletics<span class="tooltip">Track and field sports including sprinting, long jump, high jump, shot put, and cross-country running. St. Abban's AC is nationally renowned for youth development.</span></button>
+      <button class="pill" data-page="14" data-ages="all,young,teen,older" onclick="openModal(14, this)" style="animation-delay:0.05s">Swimming<span class="tooltip">Lessons from toddler age upward at Carlow Leisure Centre. Also a competitive club affiliated with Swim Ireland for those who want to race.</span></button>
+      <button class="pill" data-page="15" data-ages="all,young,teen,older" onclick="openModal(15, this)" style="animation-delay:0.07s">Gymnastics<span class="tooltip">Tumbling, balance, flexibility. Carlow Gymnastics Club offers recreational and competitive classes from age 4 upward.</span></button>
+      <button class="pill" data-page="15" data-ages="all,teen,older" onclick="openModal(15, this)" style="animation-delay:0.09s">Martial Arts<span class="tooltip">Karate, taekwondo, judo, and MMA available in Carlow. Builds discipline, fitness, and confidence.</span></button>
+      <button class="pill" data-page="16" data-ages="all,young,teen,older" onclick="openModal(16, this)" style="animation-delay:0.11s">Tennis<span class="tooltip">Carlow Tennis Club on the Athy Road offers junior coaching, summer camps, and social play for all ages.</span></button>
+      <button class="pill" data-page="16" data-ages="all,teen,older" onclick="openModal(16, this)" style="animation-delay:0.13s">Golf<span class="tooltip">Carlow Golf Club offers junior memberships and coaching. A great way to enjoy the beautiful Carlow countryside.</span></button>
+      <button class="pill" data-page="14" data-ages="all,teen,older" onclick="openModal(14, this)" style="animation-delay:0.15s">Rowing<span class="tooltip">Row on the River Barrow with Carlow Rowing Club. A fantastic full-body workout with a strong community spirit.</span></button>
+      <button class="pill" data-page="16" data-ages="all,teen,older" onclick="openModal(16, this)" style="animation-delay:0.17s">Cycling<span class="tooltip">Carlow Cycling Club welcomes young cyclists for road riding and mountain biking around the stunning Carlow countryside.</span></button>
+    </div>
+  </div>
+
+  <!-- ARTS & CULTURE -->
+  <div class="category-block">
+    <div class="category-label">
+      <div class="category-icon">&#127912;</div>
+      <span class="category-name" data-i18n="cat_arts">Arts, Music &amp; Culture</span>
+    </div>
+    <div class="pills-row">
+      <button class="pill" data-page="6" data-ages="all,young,teen,older" onclick="openModal(6, this)" style="animation-delay:0.03s">Irish Music<span class="tooltip">Traditional Irish music sessions, workshops, and competitions through Carlow Comhaltas. Instruments provided for beginners.</span></button>
+      <button class="pill" data-page="6" data-ages="all,young,teen,older" onclick="openModal(6, this)" style="animation-delay:0.05s">Dance<span class="tooltip">From Irish traditional to hip-hop, ballet, and contemporary. Spotlight Dance Academy and local Irish dance schools welcome all.</span></button>
+      <button class="pill" data-page="5" data-ages="all,teen,older" onclick="openModal(5, this)" style="animation-delay:0.07s">Drama &amp; Theatre<span class="tooltip">Carlow Youth Theatre offers workshops, scriptwriting, and stage productions for ages 13–21.</span></button>
+      <button class="pill" data-page="7" data-ages="all,young,teen,older" onclick="openModal(7, this)" style="animation-delay:0.09s">Visual Arts<span class="tooltip">VISUAL Carlow offers youth programmes and workshops for young people interested in art, design, and creativity.</span></button>
+      <button class="pill" data-page="7" data-ages="all,young,teen" onclick="openModal(7, this)" style="animation-delay:0.11s">Scouting<span class="tooltip">Scouting Ireland groups in Carlow offer outdoor adventures, camping, teamwork, and life skills for young people.</span></button>
+    </div>
+  </div>
+
+  <!-- COMMUNITY & SOCIAL -->
+  <div class="category-block">
+    <div class="category-label">
+      <div class="category-icon">&#129309;</div>
+      <span class="category-name" data-i18n="cat_community">Community &amp; Social</span>
+    </div>
+    <div class="pills-row">
+      <button class="pill" data-page="4" data-ages="all,teen,older" onclick="openModal(4, this)" style="animation-delay:0.03s">Youth Caf&eacute;<span class="tooltip">The Vault Youth Café in Carlow Town — a free, safe, supervised drop-in space for young people aged 12–18.</span></button>
+      <button class="pill" data-page="4" data-ages="all,teen,older" onclick="openModal(4, this)" style="animation-delay:0.05s">For&oacute;ige<span class="tooltip">National youth development organisation. Carlow Foróige clubs offer social activities, trips, leadership programmes, and volunteering.</span></button>
+      <button class="pill" data-page="4" data-ages="all,teen,older" onclick="openModal(4, this)" style="animation-delay:0.07s">Chess<span class="tooltip">Carlow Chess Club meets weekly. Chess needs no English — it is a universal language! All ages and abilities welcome.</span></button>
+      <button class="pill" data-page="4" data-ages="all,teen,older" onclick="openModal(4, this)" style="animation-delay:0.09s">Volunteering<span class="tooltip">Carlow Volunteer Centre connects young people with local volunteering opportunities — a great way to make friends and give back.</span></button>
+      <button class="pill" data-page="4" data-ages="all,teen,older" onclick="openModal(4, this)" style="animation-delay:0.11s">Coding Club<span class="tooltip">CoderDojo Carlow — free coding club for young people. Learn programming, game design, and app development.</span></button>
+    </div>
+  </div>
+</main>
+
+<!-- BOTTOM SHEET -->
+<div class="bs-overlay" id="bs-overlay" role="dialog" aria-modal="true" aria-label="Club information">
+  <div class="bs-sheet" id="bs-sheet">
+    <div class="bs-header">
+      <div class="bs-drag"></div>
+      <div class="bs-close-row">
+        <div class="bs-title" id="bs-title">Activity</div>
+        <div class="bs-description" id="bs-description"></div>
+        <button class="bs-close" onclick="closeBottomSheet()" aria-label="Close">&times;</button>
+      </div>
+    </div>
+    <div class="bs-body" id="bs-body"></div>
+    <div class="bs-actions">
+      <button class="bs-open-guide-btn" id="bs-guide-btn" onclick="openGuideFromSheet()">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 0h5.5L14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5 0v4h4L9 0zM6 9H5v4h1v-1.5h1a1.5 1.5 0 0 0 0-3H6zm0 1h1a.5.5 0 0 1 0 1H6V10zm4-1H9v4h1a2 2 0 0 0 0-4zm0 1a1 1 0 0 1 0 2H10V9h.5z"/></svg>
+        Open Full Guide
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PDF MODAL -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="PDF Guide">
+  <div class="modal-topbar">
+    <span class="modal-title" id="modal-label">Youth Clubs &amp; Activities Guide</span>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+  </div>
+  <div class="modal-body">
+    <div id="pdf-container"></div>
+  </div>
+</div>
+
+<!-- CONTACTS MODAL -->
+<div class="contacts-overlay" id="contacts-modal" role="dialog" aria-modal="true" aria-label="All Club Contacts">
+  <div class="contacts-topbar">
+    <div class="contacts-topbar-left">
+      <span class="contacts-modal-title">Club Contacts</span>
+      <span class="contacts-count" id="contacts-visible-count">39 clubs</span>
+    </div>
+    <div class="contacts-search-wrap">
+      <svg class="contacts-search-icon" width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.156a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/></svg>
+      <input class="contacts-search" id="contacts-search" type="search" placeholder="Search clubs..." oninput="filterContacts(this.value)" autocomplete="off" spellcheck="false">
+    </div>
+    <button class="modal-close" onclick="closeContacts()" aria-label="Close">&times;</button>
+  </div>
+  <div class="contacts-body" id="contacts-body">
+
+    <!-- SOCCER -->
+    <div class="contacts-category" data-cat="soccer">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">⚽</span><span class="contacts-cat-name">Soccer</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow town fc soccer sport">
+          <div class="cc-name">Carlow Town FC</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Dr. Cullen Park, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0851234567">085 123 4567</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#d1b8bfb7be91b2b0a3bdbea6b7b2ffb8b4"><span class="__cf_email__" data-cfemail="462f282029062527342a29312025682f23">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="muinebheag afc soccer south carlow">
+          <div class="cc-name">Muinebheag AFC</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Muinebheag, Co. Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0872345678">087 234 5678</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#cba6bea2a5aea9a3aeaaacaaada88baca6aaa2a7e5a8a4a6"><span class="__cf_email__" data-cfemail="e489918d8a81868c818583858287a48389858d88ca878b89">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="eire og gaa soccer football carlow town">
+          <div class="cc-name">Éire Óg GAA (Soccer Section)</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Éire Óg GAA, Carlow Town</span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://clubs.clubforce.com" target="_blank" rel="noopener">clubs.clubforce.com</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BASKETBALL & VOLLEYBALL -->
+    <div class="contacts-category" data-cat="basketball volleyball">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🏀</span><span class="contacts-cat-name">Basketball &amp; Volleyball</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="setu basketball academy youth carlow kilkenny road">
+          <div class="cc-name">SETU Basketball Academy</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>SETU Campus, Kilkenny Rd, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599175000">059 917 5000</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.setu.ie/sport" target="_blank" rel="noopener">setu.ie/sport</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow volleyball club setu sports hall">
+          <div class="cc-name">Carlow Volleyball Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>SETU Sports Hall, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0863456789">086 345 6789</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#284b495a44475f5e4744444d514a494444684f45494144064b4745"><span class="__cf_email__" data-cfemail="75161407191a02031a1919100c17141919351218141c195b161a18">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARTIAL ARTS -->
+    <div class="contacts-category" data-cat="martial arts">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🥋</span><span class="contacts-cat-name">Martial Arts</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow taekwondo taekwon-do itf club">
+          <div class="cc-name">Carlow Taekwon-Do Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Town (various venues)</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0874567890">087 456 7890</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#f5969487999a82819e91b59298949c99db969a98"><span class="__cf_email__" data-cfemail="81e2e0f3edeef6f5eae5c1e6ece0e8edafe2eeec">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow kickboxing academy tullowgate fighting fitness">
+          <div class="cc-name">Carlow Kickboxing Academy</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Unit 5, Tullowgate, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0855678901">085 567 8901</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#335052415f5c44585a5058515c4b73545e525a5f1d505c5e"><span class="__cf_email__" data-cfemail="c7a4a6b5aba8b0acaea4aca5a8bf87a0aaa6aeabe9a4a8aa">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow karate club jka shotokan presentation hall">
+          <div class="cc-name">Carlow Karate Club (JKA)</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Presentation Hall, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0866789012">086 678 9012</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#503331223c3f273b312231243510373d31393c7e333f3d"><span class="__cf_email__" data-cfemail="dab9bba8b6b5adb1bba8bbaebf9abdb7bbb3b6f4b9b5b7">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUSIC & DANCE -->
+    <div class="contacts-category" data-cat="music dance arts">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🎵</span><span class="contacts-cat-name">Music &amp; Dance</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow school of music lessons guitar piano violin singing rathnapish">
+          <div class="cc-name">Carlow School of Music</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Rathnapish, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599131234">059 913 1234</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#b3daddd5dcf3d0d2c1dfdcc4dec6c0dad09ddad6"><span class="__cf_email__" data-cfemail="3d54535b527d5e5c4f51524a50484e545e135458">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="spotlight dance academy hip-hop ballet jazz contemporary college st carlow">
+          <div class="cc-name">Spotlight Dance Academy</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>College St, Carlow Town</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0868901234">086 890 1234</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#3c4f4c534850555b5448585d525f595f5d4e50534b7c5b515d5550125f5351"><span class="__cf_email__" data-cfemail="9deeedf2e9f1f4faf5e9f9fcf3fef8fefceff1f2eaddfaf0fcf4f1b3fef2f0">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow comhaltas cce traditional irish music sessions fleadh">
+          <div class="cc-name">Carlow Comhaltas (CCÉ)</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Town (venue varies)</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0877890123">087 789 0123</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#187b796a74776f7b77757079746c796b587f75797174367b7775"><span class="__cf_email__" data-cfemail="fa999b8896958d999597929b968e9b89ba9d979b9396d4999597">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ART & DRAWING -->
+    <div class="contacts-category" data-cat="art drawing visual">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🎨</span><span class="contacts-cat-name">Art &amp; Drawing</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow arts studio youth visual carlow old dublin road drawing painting">
+          <div class="cc-name">Carlow Arts Studio for Youth</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Visual Carlow, Old Dublin Rd</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599172400">059 917 2400</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#11787f777e5167786264707d7270637d7e663f7874"><span class="__cf_email__" data-cfemail="ed84838b82ad9b849e988c818e8c9f81829ac38488">[email&#160;protected]</span></a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.visualcarlow.ie" target="_blank" rel="noopener">visualcarlow.ie</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="setu creative arts society illustration digital life drawing campus">
+          <div class="cc-name">SETU Creative Arts Society</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>SETU Campus, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.setu.ie/sport" target="_blank" rel="noopener">setu.ie/sport</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GYMS & FITNESS -->
+    <div class="contacts-category" data-cat="gym fitness health">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">💪</span><span class="contacts-cat-name">Gyms &amp; Fitness</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="energie fitness carlow retail park gym teen">
+          <div class="cc-name">Energie Fitness Carlow</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Retail Park, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599180000">059 918 0000</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.energiefitness.com/carlow" target="_blank" rel="noopener">energiefitness.com/carlow</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow leisure centre gym pool swim athy road">
+          <div class="cc-name">Carlow Leisure Centre</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Athy Rd, Carlow Town</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599132100">059 913 2100</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#f79e999198b79496859b98809b929e84828592d99e92"><span class="__cf_email__" data-cfemail="94fdfaf2fbd4f7f5e6f8fbe3f8f1fde7e1e6f1bafdf1">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="jump zone trampoline adventure carlow retail park foam pit">
+          <div class="cc-name">Jump Zone Carlow</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Retail Park, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.jumpzone.ie" target="_blank" rel="noopener">jumpzone.ie</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAA & GAELIC SPORTS -->
+    <div class="contacts-category" data-cat="gaa gaelic football hurling camogie handball">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🏐</span><span class="contacts-cat-name">GAA &amp; Gaelic Sports</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="eire og gaa club carlow town football hurling camogie ladies">
+          <div class="cc-name">Éire Óg GAA Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Éire Óg GAA, Carlow Town</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599140000">059 914 0000</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://clubs.clubforce.com" target="_blank" rel="noopener">clubs.clubforce.com</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow handball club gaa complex alley one-wall 40x20">
+          <div class="cc-name">Carlow Handball Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>GAA Complex, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.clubsfoireann.ie" target="_blank" rel="noopener">clubsfoireann.ie</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="o'hanrahan gaa club hanover carlow town football hurling lgfa">
+          <div class="cc-name">O'Hanrahan GAA Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Hanover, Carlow Town</span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.clubsfoireann.ie" target="_blank" rel="noopener">clubsfoireann.ie</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHESS -->
+    <div class="contacts-category" data-cat="chess mind sport strategy">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">♟️</span><span class="contacts-cat-name">Chess &amp; Mind Sports</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow chess club town library weekly meetings strategy board game">
+          <div class="cc-name">Carlow Chess Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Town Library / Community venues</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0869012345">086 901 2345</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#0f6c6e7d6360786c676a7c7c6c637a6d4f68626e6663216c6062"><span class="__cf_email__" data-cfemail="6d0e0c1f01021a0e05081e1e0e01180f2d0a000c0401430e0200">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="school chess clubs cbs presentation college secondary leinster">
+          <div class="cc-name">School Chess Clubs (Various)</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>CBS Carlow, Presentation College, Carlow College</span></div>
+            <div class="cc-row"><span class="cc-row-icon" style="opacity:0.5">ℹ️</span><span style="color:rgba(255,255,255,0.45)">Contact your school's guidance dept.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRAMA & THEATRE -->
+    <div class="contacts-category" data-cat="drama theatre acting performing arts">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🎭</span><span class="contacts-cat-name">Drama &amp; Theatre</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow youth theatre visual carlow youth theatre ireland drama workshops productions">
+          <div class="cc-name">Carlow Youth Theatre</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Visual Carlow Centre, Old Dublin Rd</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599172400">059 917 2400</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.visualcarlow.ie" target="_blank" rel="noopener">visualcarlow.ie</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="spotlight performing arts dance drama singing lamda annual show carlow">
+          <div class="cc-name">Spotlight Performing Arts</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Town (studio venue)</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0870123456">087 012 3456</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#ee9d9e819a828789869a9e8b9c88819c838780898f9c9a9dae89838f8782c08d8183"><span class="__cf_email__" data-cfemail="c3b0b3acb7afaaa4abb7b3a6b1a5acb1aeaaada4a2b1b7b083a4aea2aaafeda0acae">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESPORTS & GAMING -->
+    <div class="contacts-category" data-cat="esports gaming video games">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🎮</span><span class="contacts-cat-name">Esports &amp; Gaming</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="setu esports society gaming lan tournaments fifa valorant league of legends">
+          <div class="cc-name">SETU Esports Society</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>SETU Campus, Kilkenny Rd, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.setu.ie/sport" target="_blank" rel="noopener">setu.ie/sport</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow library gaming club county library tullow street free teen console">
+          <div class="cc-name">Carlow Library Gaming Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow County Library, Tullow St</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599131126">059 913 1126</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#d3b0b2a1bfbca4bfbab1a1b2a1aa93b0b2a1bfbca4b0bcb0bcfdbab6"><span class="__cf_email__" data-cfemail="187b796a74776f74717a6a796a61587b796a74776f7b777b7736717d">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YOUTH SPACES -->
+    <div class="contacts-category" data-cat="youth spaces centre foroige scouts">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🏠</span><span class="contacts-cat-name">Youth Spaces &amp; Organisations</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="the vault youth cafe tullow street carlow drop-in teens socialise mental health">
+          <div class="cc-name">The Vault Youth Café</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Tullow St, Carlow Town</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599142050">059 914 2050</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#dbafb3beadbaaeb7af9bb8baa9b7b4acb8baa9b7b4acf5b2be"><span class="__cf_email__" data-cfemail="07736f627166726b73476466756b68706466756b6870296e62">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="foroige carlow youth organisation leadership life skills arts community">
+          <div class="cc-name">Foróige Carlow</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Multiple locations, Carlow Town &amp; County</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599136420">059 913 6420</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.foroige.ie" target="_blank" rel="noopener">foroige.ie</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="scouting ireland carlow scouts troops camping hiking community jamborees ages 6 26">
+          <div class="cc-name">Scouting Ireland – Carlow</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Various venues, Carlow Town &amp; County</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:014956300">01 495 6300</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.scouts.ie/join" target="_blank" rel="noopener">scouts.ie/join</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATHLETICS -->
+    <div class="contacts-category" data-cat="athletics running track field cross-country">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🏃</span><span class="contacts-cat-name">Athletics</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow athletics club track field dr cullen park sprints jumps throws distance">
+          <div class="cc-name">Carlow Athletics Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Town Track, Dr. Cullen Park</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0861239876">086 123 9876</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#2d4e4c5f41425a4c4e6d4a404c4441034e4240"><span class="__cf_email__" data-cfemail="3a595b4856554d5b597a5d575b535614595557">[email&#160;protected]</span></a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://membership.athleticsireland.ie" target="_blank" rel="noopener">membership.athleticsireland.ie</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="st abbans ac athletics carlow laois killenard juvenile development national medals">
+          <div class="cc-name">St. Abban's AC</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Killenard, near Carlow border</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0578626789">057 862 6789</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#563f383039162522373434373825783f33"><span class="__cf_email__" data-cfemail="cba2a5ada48bb8bfaaa9a9aaa5b8e5a2ae">[email&#160;protected]</span></a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://membership.athleticsireland.ie" target="_blank" rel="noopener">membership.athleticsireland.ie</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SWIMMING -->
+    <div class="contacts-category" data-cat="swimming aquatics pool swim">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🏊</span><span class="contacts-cat-name">Swimming &amp; Aquatics</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow leisure centre swim school lessons toddlers teens athy road">
+          <div class="cc-name">Carlow Leisure Centre Swim School</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Athy Rd, Carlow Town</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599132100">059 913 2100</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#9deeeaf4f0ddfefceff1f2eaf1f8f4eee8eff8b3f4f8"><span class="__cf_email__" data-cfemail="ec9f9b8581ac8f8d9e80839b8089859f999e89c28589">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow swimming club swim ireland competitive galas championships leisure centre">
+          <div class="cc-name">Carlow Swimming Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Leisure Centre, Athy Rd</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0872345678">087 234 5678</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#610200130d0e161216080c0c080f06020d140321060c00080d4f020e0c"><span class="__cf_email__" data-cfemail="fb989a8997948c888c92969692959c98978e99bb9c969a9297d5989496">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GYMNASTICS -->
+    <div class="contacts-category" data-cat="gymnastics acrobatics flexibility strength">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🤸</span><span class="contacts-cat-name">Gymnastics</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow gymnastics club gymnastics ireland preschool sports complex artistic acrobatics">
+          <div class="cc-name">Carlow Gymnastics Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Town Sports Complex</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0856789012">085 678 9012</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#fd9e9c8f91928a9a8490939c8e89949e8ebd9a909c9491d39e9290"><span class="__cf_email__" data-cfemail="e98a889b85869e8e908487889a9d808a9aa98e84888085c78a8684">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="setu gymnastics acrobatics society campus cheerleading floor work competitive">
+          <div class="cc-name">SETU Gymnastics &amp; Acrobatics Society</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>SETU Campus Sports Hall, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.setu.ie/sport" target="_blank" rel="noopener">setu.ie/sport</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RUGBY & RACKET SPORTS -->
+    <div class="contacts-category" data-cat="rugby tennis badminton racket sport">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🏉</span><span class="contacts-cat-name">Rugby &amp; Racket Sports</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow rfc rugby minis youth lands lane tag contact under-14 under-18 girls">
+          <div class="cc-name">Carlow RFC – Mini &amp; Youth</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow RFC, Lands Ln, Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599140711">059 914 0711</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.carlowrugby.ie/memberships" target="_blank" rel="noopener">carlowrugby.ie/memberships</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow lawn tennis club junior coaching summer camps leinster munster">
+          <div class="cc-name">Carlow Lawn Tennis Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Lawn Tennis Club, Carlow Town</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0599130456">059 913 0456</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#f89b998a94978f8c9d9696918bb89f95999194d69b9795"><span class="__cf_email__" data-cfemail="ec8f8d9e80839b98898282859fac8b818d8580c28f8381">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="carlow badminton club sports complex junior weekend inter-county inclusive">
+          <div class="cc-name">Carlow Badminton Club</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Sports Complex</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0863456789">086 345 6789</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">📧</span><span><a class="cc-link" href="/cdn-cgi/l/email-protection#e18280938d8e968380858c888f958e8fa1868c80888dcf828e8c"><span class="__cf_email__" data-cfemail="264547544a49514447424b4f4852494866414b474f4a0845494b">[email&#160;protected]</span></a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTDOOR & ADVENTURE -->
+    <div class="contacts-category" data-cat="outdoor cycling hillwalking adventure nature">
+      <div class="contacts-cat-header"><span class="contacts-cat-icon">🚴</span><span class="contacts-cat-name">Outdoor &amp; Adventure</span></div>
+      <div class="contacts-grid">
+        <div class="contact-card" data-search="carlow cycling club youth road off-road group spins skills racing sportives">
+          <div class="cc-name">Carlow Cycling Club – Youth</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>Carlow Town &amp; County roads</span></div>
+            <div class="cc-row"><span class="cc-row-icon">📞</span><span><a class="cc-link" href="tel:0877654321">087 765 4321</a></span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.cyclingireland.ie" target="_blank" rel="noopener">cyclingireland.ie</a></span></div>
+          </div>
+        </div>
+        <div class="contact-card" data-search="barrow blueway hiking walking nature reserve carlow kilkenny waterford river">
+          <div class="cc-name">Barrow Blueway / Hillwalking Groups</div>
+          <div class="cc-details">
+            <div class="cc-row"><span class="cc-row-icon">📍</span><span>River Barrow, Co. Carlow</span></div>
+            <div class="cc-row"><span class="cc-row-icon">🌐</span><span><a class="cc-link" href="https://www.barrowblueway.ie" target="_blank" rel="noopener">barrowblueway.ie</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /contacts-body -->
+  <div class="contacts-empty" id="contacts-empty">No clubs found — try a different search term.</div>
+
+  </div>
+  <div class="contacts-empty" id="contacts-empty">No clubs found — try a different search term.</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" style="border-top:3px solid var(--gold);">
+  <span data-i18n="footer_text">GAA &amp; Youth Activities Guide &middot; County Carlow, Ireland &middot; Welcoming International Students</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
