@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos &amp; Video — GAA &amp; Youth Clubs in Carlow</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site pages">
+  <a href="index.html">Home</a>
+  <a href="map.html">Club Map</a>
+  <a href="join.html">How to Join</a>
+  <a href="profiles.html">Club Profiles</a>
+  <a href="gallery.html" class="active">Photos &amp; Video</a>
+  <a href="faq.html">FAQ</a>
+  <a href="events.html">Events</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="register.html">Pre-Register</a>
+</nav>
+
+<header class="header" style="padding:32px 24px 28px;">
+  <h1 style="font-size:clamp(1.5rem,4vw,2.4rem);">&#128247; Photos &amp; Video — <span>Clubs in Action</span></h1>
+  <div class="lang-bar" role="navigation" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('en')" data-lang="en" title="English">&#127468;&#127463; EN</button>
+    <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Espa&ntilde;ol">&#127466;&#127480; ES</button>
+    <button class="lang-btn" onclick="setLang('fr')" data-lang="fr" title="Fran&ccedil;ais">&#127467;&#127479; FR</button>
+    <button class="lang-btn" onclick="setLang('de')" data-lang="de" title="Deutsch">&#127465;&#127466; DE</button>
+    <button class="lang-btn" onclick="setLang('it')" data-lang="it" title="Italiano">&#127470;&#127481; IT</button>
+    <button class="lang-btn" onclick="setLang('pt')" data-lang="pt" title="Portugu&ecirc;s">&#127463;&#127479; PT</button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang="zh" title="中文">&#127464;&#127475; 中文</button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <a href="index.html" class="back-home">&#8592; Back to Home</a>
+
+  <section class="page-section" id="sec-gallery">
+    <h2 class="section-heading" data-i18n="gal_title">Clubs in <span class="gold-accent">Action</span></h2>
+    <p class="section-subheading" data-i18n="gal_sub">Get a feel for what it is like to be part of a club in County Carlow.</p>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#166b3a22,#d4a01733);">&#129354;<div class="gallery-thumb-label">GAA</div></div>
+        <div class="gallery-info"><div class="gallery-title">&Eacute;ire &Oacute;g GAA — Hurling Practice</div><div class="gallery-sub">Carlow Town &middot; All ages welcome</div></div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#166b3a22,#d4a01733);">&#9917;<div class="gallery-thumb-label">Soccer</div></div>
+        <div class="gallery-info"><div class="gallery-title">Carlow Town FC — Junior Training</div><div class="gallery-sub">Dr. Cullen Park &middot; Weekly sessions</div></div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#166b3a22,#d4a01733);">&#127943;<div class="gallery-thumb-label">Basketball</div></div>
+        <div class="gallery-info"><div class="gallery-title">SETU Basketball — Game Day</div><div class="gallery-sub">SETU Campus &middot; Regional leagues</div></div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#166b3a22,#d4a01733);">&#127995;<div class="gallery-thumb-label">Dance</div></div>
+        <div class="gallery-info"><div class="gallery-title">Spotlight Dance — Show Rehearsal</div><div class="gallery-sub">College St &middot; Hip-hop, ballet, jazz</div></div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#166b3a22,#d4a01733);">&#127929;<div class="gallery-thumb-label">Music</div></div>
+        <div class="gallery-info"><div class="gallery-title">Carlow Comhaltas — Trad Session</div><div class="gallery-sub">Monthly open sessions</div></div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#166b3a22,#d4a01733);">&#9976;<div class="gallery-thumb-label">Athletics</div></div>
+        <div class="gallery-info"><div class="gallery-title">St Abban's — County Championships</div><div class="gallery-sub">IT Carlow Track &middot; Nationally ranked</div></div>
+      </div>
+    </div>
+
+    <!-- PHOTO UPLOAD AREA -->
+    <div style="margin-top:32px;padding:24px;background:var(--white);border:2px dashed var(--border);border-radius:16px;text-align:center;">
+      <h3 style="font-size:1.1rem;color:var(--text);margin-bottom:6px;" data-i18n="gal_upload">Upload Your Photo</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);font-family:var(--mono);margin-bottom:16px;" data-i18n="gal_upload_sub">Share your club experiences with the community</p>
+      <button id="upload-btn" onclick="openCloudinaryUpload()" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--primary);color:var(--white);border:none;border-radius:var(--radius);font-size:0.92rem;font-family:var(--serif);font-weight:700;cursor:pointer;transition:background 0.18s;">
+        &#128247; Choose Photo
+      </button>
+      <p style="font-size:0.70rem;color:var(--text-muted);font-family:var(--mono);margin-top:10px;">JPG, PNG or GIF &middot; Max 10MB</p>
+    </div>
+
+    <!-- USER UPLOADED PHOTOS -->
+    <div id="user-gallery" class="gallery-grid" style="margin-top:22px;"></div>
+
+    <div class="video-embed-wrap" style="margin-top:28px;">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?mute=1" title="GAA &amp; Youth Activities in Carlow" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p style="text-align:center;margin-top:10px;font-size:0.78rem;color:var(--text-muted);font-family:var(--mono);">Video placeholder — replace with your club highlights reel</p>
+  </section>
+</div>
+
+<footer class="footer" style="border-top:3px solid var(--gold);">
+  <span data-i18n="footer_text">GAA &amp; Youth Activities Guide &middot; County Carlow, Ireland &middot; Welcoming International Students</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

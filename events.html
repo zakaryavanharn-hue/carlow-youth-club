@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — GAA &amp; Youth Clubs in Carlow</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site pages">
+  <a href="index.html">Home</a>
+  <a href="map.html">Club Map</a>
+  <a href="join.html">How to Join</a>
+  <a href="profiles.html">Club Profiles</a>
+  <a href="gallery.html">Photos &amp; Video</a>
+  <a href="faq.html">FAQ</a>
+  <a href="events.html" class="active">Events</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="register.html">Pre-Register</a>
+</nav>
+
+<header class="header" style="padding:32px 24px 28px;">
+  <h1 style="font-size:clamp(1.5rem,4vw,2.4rem);">&#128197; Upcoming Events &amp; <span>Open Days</span></h1>
+  <div class="lang-bar" role="navigation" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('en')" data-lang="en" title="English">&#127468;&#127463; EN</button>
+    <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Espa&ntilde;ol">&#127466;&#127480; ES</button>
+    <button class="lang-btn" onclick="setLang('fr')" data-lang="fr" title="Fran&ccedil;ais">&#127467;&#127479; FR</button>
+    <button class="lang-btn" onclick="setLang('de')" data-lang="de" title="Deutsch">&#127465;&#127466; DE</button>
+    <button class="lang-btn" onclick="setLang('it')" data-lang="it" title="Italiano">&#127470;&#127481; IT</button>
+    <button class="lang-btn" onclick="setLang('pt')" data-lang="pt" title="Portugu&ecirc;s">&#127463;&#127479; PT</button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang="zh" title="中文">&#127464;&#127475; 中文</button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <a href="index.html" class="back-home">&#8592; Back to Home</a>
+
+  <section class="page-section" id="sec-events">
+    <h2 class="section-heading" data-i18n="ev_title">Upcoming Events &amp; <span class="gold-accent">Open Days</span></h2>
+    <p class="section-subheading" data-i18n="ev_sub">Plan your arrival around these events — trials, open days, and festivals across County Carlow.</p>
+    <div class="event-filters" id="event-filters">
+      <button class="event-filter-btn active" data-filter="all" onclick="filterEvents('all',this)">All</button>
+      <button class="event-filter-btn" data-filter="apr" onclick="filterEvents('apr',this)">April</button>
+      <button class="event-filter-btn" data-filter="may" onclick="filterEvents('may',this)">May</button>
+      <button class="event-filter-btn" data-filter="jun" onclick="filterEvents('jun',this)">June</button>
+      <button class="event-filter-btn" data-filter="open-day" onclick="filterEvents('open-day',this)">Open Day</button>
+      <button class="event-filter-btn" data-filter="trial" onclick="filterEvents('trial',this)">Trial</button>
+      <button class="event-filter-btn" data-filter="match" onclick="filterEvents('match',this)">Match/Show</button>
+    </div>
+    <div class="event-list" id="inline-event-list">
+      <div class="event-card" data-month="apr" data-type="open-day">
+        <div class="event-date-box"><div class="event-month">APR</div><div class="event-day">5</div></div>
+        <div class="event-info">
+          <div class="event-name">GAA Open Day — &Eacute;ire &Oacute;g &amp; O'Hanrahan</div>
+          <div class="event-meta">&#128197; Saturday 5 April &middot; 10:00–13:00<br>&#128205; &Eacute;ire &Oacute;g GAA, Carlow Town</div>
+          <div class="event-badge">Open Day &middot; All Ages &middot; Free Entry</div>
+        </div>
+      </div>
+      <div class="event-card" data-month="apr" data-type="trial">
+        <div class="event-date-box"><div class="event-month">APR</div><div class="event-day">12</div></div>
+        <div class="event-info">
+          <div class="event-name">Carlow Town FC Junior Trials</div>
+          <div class="event-meta">&#128197; Saturday 12 April &middot; 09:00–11:30<br>&#128205; Dr. Cullen Park, Carlow</div>
+          <div class="event-badge">Trial &middot; Ages 10–16 &middot; Free</div>
+        </div>
+      </div>
+      <div class="event-card" data-month="apr" data-type="open-day">
+        <div class="event-date-box"><div class="event-month">APR</div><div class="event-day">26</div></div>
+        <div class="event-info">
+          <div class="event-name">Carlow Athletics Open Track &amp; Field Day</div>
+          <div class="event-meta">&#128197; Saturday 26 April &middot; 10:00–15:00<br>&#128205; Carlow IT Track, Kilkenny Rd</div>
+          <div class="event-badge">Open Day &middot; Ages 8+ &middot; Free to spectate</div>
+        </div>
+      </div>
+      <div class="event-card" data-month="may" data-type="match">
+        <div class="event-date-box"><div class="event-month">MAY</div><div class="event-day">3</div></div>
+        <div class="event-info">
+          <div class="event-name">Spotlight Dance Academy — Spring Showcase</div>
+          <div class="event-meta">&#128197; Saturday 3 May &middot; 14:00–17:00<br>&#128205; Carlow Town Hall</div>
+          <div class="event-badge">Show &middot; All Ages &middot; Tickets Required</div>
+        </div>
+      </div>
+      <div class="event-card" data-month="may" data-type="open-day">
+        <div class="event-date-box"><div class="event-month">MAY</div><div class="event-day">10</div></div>
+        <div class="event-info">
+          <div class="event-name">Carlow Youth Theatre — New Members Evening</div>
+          <div class="event-meta">&#128197; Saturday 10 May &middot; 14:00–16:00<br>&#128205; Visual Carlow, Old Dublin Rd</div>
+          <div class="event-badge">Open Day &middot; Ages 13–21 &middot; Free</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer" style="border-top:3px solid var(--gold);">
+  <span data-i18n="footer_text">GAA &amp; Youth Activities Guide &middot; County Carlow, Ireland &middot; Welcoming International Students</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

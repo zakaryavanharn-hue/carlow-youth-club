@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — GAA &amp; Youth Clubs in Carlow</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site pages">
+  <a href="index.html">Home</a>
+  <a href="map.html">Club Map</a>
+  <a href="join.html">How to Join</a>
+  <a href="profiles.html">Club Profiles</a>
+  <a href="gallery.html">Photos &amp; Video</a>
+  <a href="faq.html" class="active">FAQ</a>
+  <a href="events.html">Events</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="register.html">Pre-Register</a>
+</nav>
+
+<header class="header" style="padding:32px 24px 28px;">
+  <h1 style="font-size:clamp(1.5rem,4vw,2.4rem);">&#10067; Frequently Asked <span>Questions</span></h1>
+  <div class="lang-bar" role="navigation" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('en')" data-lang="en" title="English">&#127468;&#127463; EN</button>
+    <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Espa&ntilde;ol">&#127466;&#127480; ES</button>
+    <button class="lang-btn" onclick="setLang('fr')" data-lang="fr" title="Fran&ccedil;ais">&#127467;&#127479; FR</button>
+    <button class="lang-btn" onclick="setLang('de')" data-lang="de" title="Deutsch">&#127465;&#127466; DE</button>
+    <button class="lang-btn" onclick="setLang('it')" data-lang="it" title="Italiano">&#127470;&#127481; IT</button>
+    <button class="lang-btn" onclick="setLang('pt')" data-lang="pt" title="Portugu&ecirc;s">&#127463;&#127479; PT</button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang="zh" title="中文">&#127464;&#127475; 中文</button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <a href="index.html" class="back-home">&#8592; Back to Home</a>
+
+  <section class="page-section" id="sec-faq">
+    <h2 class="section-heading" data-i18n="faq_title">Frequently Asked <span class="gold-accent">Questions</span></h2>
+    <p class="section-subheading" data-i18n="faq_sub">Common questions from international students about joining clubs in Carlow.</p>
+    <div class="faq-list" id="inline-faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span data-i18n="faq_q1">Do I need to speak Irish to join?</span>
+          <span class="faq-chevron">&#9660;</span>
+        </button>
+        <div class="faq-answer" data-i18n="faq_a1">No — English is the language used in all clubs and activities in Carlow. You do not need any Irish language skills. A basic level of English will help, but coaches are patient and very welcoming.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span data-i18n="faq_q2">Is there a fee to participate?</span>
+          <span class="faq-chevron">&#9660;</span>
+        </button>
+        <div class="faq-answer" data-i18n="faq_a2">Many clubs are free or very low cost. Some sports clubs charge &euro;20–&euro;80 per year. Always enquire — it is always free to ask.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span data-i18n="faq_q3">Can I join mid-year?</span>
+          <span class="faq-chevron">&#9660;</span>
+        </button>
+        <div class="faq-answer" data-i18n="faq_a3">Yes! Most clubs accept new members throughout the year. You do not need to wait for a new season or term.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span data-i18n="faq_q4">What should I bring to my first session?</span>
+          <span class="faq-chevron">&#9660;</span>
+        </button>
+        <div class="faq-answer" data-i18n="faq_a4">For sports: comfortable athletic clothes, trainers, and water. For arts or music: just yourself. Always arrive a few minutes early.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span data-i18n="faq_q5">How do I get to the club from my school/accommodation?</span>
+          <span class="faq-chevron">&#9660;</span>
+        </button>
+        <div class="faq-answer" data-i18n="faq_a5">Carlow Town is compact and most clubs are reachable by bus, bicycle, or on foot. The <a href="map.html" style="color:var(--primary);font-weight:700;">Club Map</a> shows each location so you can plan your journey.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>What age groups do the clubs cater to?</span>
+          <span class="faq-chevron">&#9660;</span>
+        </button>
+        <div class="faq-answer">Most clubs welcome young people from ages 5 to 26. Some clubs start as young as age 4 (like gymnastics and dance). Use the age filter on the <a href="index.html" style="color:var(--primary);font-weight:700;">home page</a> to find clubs for your age group.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Do I need equipment or a uniform?</span>
+          <span class="faq-chevron">&#9660;</span>
+        </button>
+        <div class="faq-answer">For your first session, just wear comfortable clothes. Most clubs provide equipment for beginners. If you join, some clubs include a jersey in the membership fee. Check the <a href="profiles.html" style="color:var(--primary);font-weight:700;">Club Profiles</a> for details on each club.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>How do I pre-register?</span>
+          <span class="faq-chevron">&#9660;</span>
+        </button>
+        <div class="faq-answer">Fill out the <a href="register.html" style="color:var(--primary);font-weight:700;">Pre-Arrival Registration Form</a>. It takes less than 2 minutes and does not commit you to anything — it simply helps us prepare for your arrival.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer" style="border-top:3px solid var(--gold);">
+  <span data-i18n="footer_text">GAA &amp; Youth Activities Guide &middot; County Carlow, Ireland &middot; Welcoming International Students</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

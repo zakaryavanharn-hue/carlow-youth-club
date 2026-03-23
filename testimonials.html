@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials — GAA &amp; Youth Clubs in Carlow</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site pages">
+  <a href="index.html">Home</a>
+  <a href="map.html">Club Map</a>
+  <a href="join.html">How to Join</a>
+  <a href="profiles.html">Club Profiles</a>
+  <a href="gallery.html">Photos &amp; Video</a>
+  <a href="faq.html">FAQ</a>
+  <a href="events.html">Events</a>
+  <a href="testimonials.html" class="active">Testimonials</a>
+  <a href="register.html">Pre-Register</a>
+</nav>
+
+<header class="header" style="padding:32px 24px 28px;">
+  <h1 style="font-size:clamp(1.5rem,4vw,2.4rem);">&#128172; What International Members <span>Say</span></h1>
+  <div class="lang-bar" role="navigation" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('en')" data-lang="en" title="English">&#127468;&#127463; EN</button>
+    <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Espa&ntilde;ol">&#127466;&#127480; ES</button>
+    <button class="lang-btn" onclick="setLang('fr')" data-lang="fr" title="Fran&ccedil;ais">&#127467;&#127479; FR</button>
+    <button class="lang-btn" onclick="setLang('de')" data-lang="de" title="Deutsch">&#127465;&#127466; DE</button>
+    <button class="lang-btn" onclick="setLang('it')" data-lang="it" title="Italiano">&#127470;&#127481; IT</button>
+    <button class="lang-btn" onclick="setLang('pt')" data-lang="pt" title="Portugu&ecirc;s">&#127463;&#127479; PT</button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang="zh" title="中文">&#127464;&#127475; 中文</button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <a href="index.html" class="back-home">&#8592; Back to Home</a>
+
+  <section class="page-section" id="sec-testimonials">
+    <h2 class="section-heading" data-i18n="test_title">What International Members <span class="gold-accent">Say</span></h2>
+    <p class="section-subheading" data-i18n="test_sub">Hear from young people who moved to Carlow and found a home through sport and community.</p>
+    <div class="testimonials-track" id="testimonials-track">
+      <div class="testimonial-card">
+        <div class="testimonial-flag">&#127463;&#127479;</div>
+        <div class="testimonial-quote" style="padding-top:18px;">I was so nervous when I arrived in Ireland. I didn't know anyone. Then I joined &Eacute;ire &Oacute;g GAA and within a week I had 20 new friends. Hurling is amazing — I had never even heard of it before! The coaches made me feel so welcome even though my English wasn't great.</div>
+        <div class="testimonial-author">Lucas Silva</div>
+        <div class="testimonial-meta">From Brazil &middot; Joined &Eacute;ire &Oacute;g GAA Club</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-flag">&#127477;&#127473;</div>
+        <div class="testimonial-quote" style="padding-top:18px;">My parents were worried about me moving to a small town, but Carlow is actually full of things to do. I joined St Abban's Athletics and the Vault Youth Caf&eacute;. Athletics helped me stay fit and the youth caf&eacute; gave me a safe place to hang out. I really recommend it to anyone coming here.</div>
+        <div class="testimonial-author">Maja Kowalska</div>
+        <div class="testimonial-meta">From Poland &middot; Joined St Abban's Athletics</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-flag">&#127467;&#127479;</div>
+        <div class="testimonial-quote" style="padding-top:18px;">I love music and was so happy to find Carlow Comhaltas. Traditional Irish music is beautiful and the people are so kind. They let me play my guitar at sessions even though I was still learning the Irish tunes. I also go to Spotlight Dance — it's like having two families now.</div>
+        <div class="testimonial-author">Amine Diallo</div>
+        <div class="testimonial-meta">From France &middot; Joined Carlow Comhaltas &amp; Spotlight Dance</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-flag">&#127466;&#127480;</div>
+        <div class="testimonial-quote" style="padding-top:18px;">Coming from Spain, I missed my football team back home. But Carlow Town FC welcomed me from day one. The level is good, the training is fun, and we travel to matches together on weekends. It made the whole experience of living abroad so much easier.</div>
+        <div class="testimonial-author">Pablo Mart&iacute;nez</div>
+        <div class="testimonial-meta">From Spain &middot; Joined Carlow Town FC</div>
+      </div>
+    </div>
+    <div class="testimonials-nav">
+      <button onclick="moveTestimonial(-1)" aria-label="Previous testimonial">&#8592;</button>
+      <button onclick="moveTestimonial(1)" aria-label="Next testimonial">&#8594;</button>
+    </div>
+    <div class="testimonials-dots" id="testimonials-dots">
+      <span class="active" onclick="goToTestimonial(0)"></span>
+      <span onclick="goToTestimonial(1)"></span>
+      <span onclick="goToTestimonial(2)"></span>
+      <span onclick="goToTestimonial(3)"></span>
+    </div>
+  </section>
+</div>
+
+<footer class="footer" style="border-top:3px solid var(--gold);">
+  <span data-i18n="footer_text">GAA &amp; Youth Activities Guide &middot; County Carlow, Ireland &middot; Welcoming International Students</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

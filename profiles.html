@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Profiles — GAA &amp; Youth Clubs in Carlow</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site pages">
+  <a href="index.html">Home</a>
+  <a href="map.html">Club Map</a>
+  <a href="join.html">How to Join</a>
+  <a href="profiles.html" class="active">Club Profiles</a>
+  <a href="gallery.html">Photos &amp; Video</a>
+  <a href="faq.html">FAQ</a>
+  <a href="events.html">Events</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="register.html">Pre-Register</a>
+</nav>
+
+<header class="header" style="padding:32px 24px 28px;">
+  <h1 style="font-size:clamp(1.5rem,4vw,2.4rem);">&#127942; Club Profiles — <span>Rich Detail</span></h1>
+  <div class="lang-bar" role="navigation" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('en')" data-lang="en" title="English">&#127468;&#127463; EN</button>
+    <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Espa&ntilde;ol">&#127466;&#127480; ES</button>
+    <button class="lang-btn" onclick="setLang('fr')" data-lang="fr" title="Fran&ccedil;ais">&#127467;&#127479; FR</button>
+    <button class="lang-btn" onclick="setLang('de')" data-lang="de" title="Deutsch">&#127465;&#127466; DE</button>
+    <button class="lang-btn" onclick="setLang('it')" data-lang="it" title="Italiano">&#127470;&#127481; IT</button>
+    <button class="lang-btn" onclick="setLang('pt')" data-lang="pt" title="Portugu&ecirc;s">&#127463;&#127479; PT</button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang="zh" title="中文">&#127464;&#127475; 中文</button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <a href="index.html" class="back-home">&#8592; Back to Home</a>
+
+  <section class="page-section" id="sec-profiles">
+    <h2 class="section-heading" data-i18n="prof_title">Club Profiles — <span class="gold-accent">Rich Detail</span></h2>
+    <p class="section-subheading" data-i18n="prof_sub">Everything you need to know before you join — age groups, schedules, costs, and what to expect. Click a card to expand.</p>
+    <div class="profile-grid">
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#129354;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">&Eacute;ire &Oacute;g GAA Club</div>
+            <div class="profile-tags"><span class="profile-tag">GAA Football</span><span class="profile-tag">Hurling</span><span class="profile-tag">Camogie</span><span class="profile-tag">Uniquely Irish</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 5–26 (underage to adult)</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#9917;</span><span><strong>Activities:</strong> Gaelic Football, Hurling, Camogie, Ladies Football, Handball</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> 500+ — largest club in County Carlow</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Training Tue &amp; Thu evenings &middot; Matches Sundays</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> &euro;40–&euro;80/year &middot; Some bursaries available</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> No Irish needed — all in English. Basic English sufficient.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#9917;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">Carlow Town FC</div>
+            <div class="profile-tags"><span class="profile-tag">Soccer</span><span class="profile-tag">Team Sport</span><span class="profile-tag">Outdoor</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 6–18 (underage) &middot; 18+ (adult)</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#9917;</span><span><strong>Activities:</strong> Soccer training, leagues, cup competitions</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> ~200 across all age groups</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Training Tue &amp; Thu evenings &middot; Match weekends</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> ~&euro;60/year (underage) &middot; Includes jersey</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> Basic English &middot; Coaches very welcoming</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#127943;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">SETU Basketball Academy</div>
+            <div class="profile-tags"><span class="profile-tag">Basketball</span><span class="profile-tag">Indoor</span><span class="profile-tag">Competitive</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 14+ &middot; Teen &amp; adult squads</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#127936;</span><span><strong>Activities:</strong> Training, regional &amp; national leagues</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> ~80 players</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Mon, Wed, Fri evenings</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> ~&euro;50/year (student)</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> Basic English &middot; Coaching in English</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#127995;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">Spotlight Dance Academy</div>
+            <div class="profile-tags"><span class="profile-tag">Dance</span><span class="profile-tag">Hip-Hop</span><span class="profile-tag">Ballet</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 4–18 &middot; All abilities welcome</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128131;</span><span><strong>Activities:</strong> Hip-hop, ballet, jazz, contemporary</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> ~150 students</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Saturdays + some weekday evenings</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> &euro;10–&euro;15 per class &middot; Term packages available</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> No English required for beginners &middot; Very inclusive</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#127912;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">Carlow Youth Theatre</div>
+            <div class="profile-tags"><span class="profile-tag">Drama</span><span class="profile-tag">Theatre</span><span class="profile-tag">Creative</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 13–21</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#127917;</span><span><strong>Activities:</strong> Workshops, script writing, stage productions</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> ~40 members</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Saturdays 14:00–16:30</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> &euro;30/year &middot; Production costs extra</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> Intermediate English helpful &middot; Very supportive</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#9976;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">St Abban's Athletics Club</div>
+            <div class="profile-tags"><span class="profile-tag">Athletics</span><span class="profile-tag">Track &amp; Field</span><span class="profile-tag">Cross Country</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 8+ &middot; Juvenile, junior &amp; senior</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#127939;</span><span><strong>Activities:</strong> Sprints, jumps, throws, cross-country, road races</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> 300+ &middot; National champions in field events</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Tue &amp; Thu (juveniles) &middot; Sat morning</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> &euro;50/year &middot; First session free</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> Minimal English needed &middot; Athletics is universal</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#9822;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">Carlow Chess Club</div>
+            <div class="profile-tags"><span class="profile-tag">Chess</span><span class="profile-tag">Mind Sport</span><span class="profile-tag">Strategy</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 8+ &middot; All levels welcome</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#9822;</span><span><strong>Activities:</strong> Weekly club night, Leinster league, tournaments</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> ~35 members</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Tuesday evenings 18:30–20:30</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> &euro;20/year &middot; Juniors free first month</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> No English needed &middot; Chess is universal!</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#129368;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">Carlow For&oacute;ige Youth Club</div>
+            <div class="profile-tags"><span class="profile-tag">Youth Club</span><span class="profile-tag">Community</span><span class="profile-tag">Social</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 12–18</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129309;</span><span><strong>Activities:</strong> Social activities, trips, leadership, volunteering</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> Active weekly group</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Wednesday evenings</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> Free to join &middot; Activities may have small costs</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> Basic English helpful &middot; Very inclusive &amp; diverse</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-expand" onclick="toggleProfile(this)">
+        <div class="profile-card-header">
+          <div class="profile-icon">&#127929;</div>
+          <div class="profile-card-header-info">
+            <div class="profile-name">Carlow Comhaltas (CC&Eacute;)</div>
+            <div class="profile-tags"><span class="profile-tag">Traditional Music</span><span class="profile-tag">Irish Culture</span><span class="profile-tag">Sessions</span></div>
+          </div>
+          <span class="profile-card-chevron">&#9660;</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-details">
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Age Group:</strong> 6+ &middot; All abilities</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#127929;</span><span><strong>Activities:</strong> Workshops, trad sessions, Fleadh competitions</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128101;</span><span><strong>Members:</strong> Active branch with regular sessions</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128197;</span><span><strong>Schedule:</strong> Workshops Saturdays &middot; Sessions monthly</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#128176;</span><span><strong>Cost:</strong> &euro;30/year membership &middot; Lessons extra</span></div>
+            <div class="profile-row"><span class="profile-row-icon">&#129499;</span><span><strong>Language:</strong> No Irish needed &middot; Music is universal</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<footer class="footer" style="border-top:3px solid var(--gold);">
+  <span data-i18n="footer_text">GAA &amp; Youth Activities Guide &middot; County Carlow, Ireland &middot; Welcoming International Students</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

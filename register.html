@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Register — GAA &amp; Youth Clubs in Carlow</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site pages">
+  <a href="index.html">Home</a>
+  <a href="map.html">Club Map</a>
+  <a href="join.html">How to Join</a>
+  <a href="profiles.html">Club Profiles</a>
+  <a href="gallery.html">Photos &amp; Video</a>
+  <a href="faq.html">FAQ</a>
+  <a href="events.html">Events</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="register.html" class="active">Pre-Register</a>
+</nav>
+
+<header class="header" style="padding:32px 24px 28px;">
+  <h1 style="font-size:clamp(1.5rem,4vw,2.4rem);">&#128221; Pre-Arrival <span>Registration</span></h1>
+  <div class="lang-bar" role="navigation" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('en')" data-lang="en" title="English">&#127468;&#127463; EN</button>
+    <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Espa&ntilde;ol">&#127466;&#127480; ES</button>
+    <button class="lang-btn" onclick="setLang('fr')" data-lang="fr" title="Fran&ccedil;ais">&#127467;&#127479; FR</button>
+    <button class="lang-btn" onclick="setLang('de')" data-lang="de" title="Deutsch">&#127465;&#127466; DE</button>
+    <button class="lang-btn" onclick="setLang('it')" data-lang="it" title="Italiano">&#127470;&#127481; IT</button>
+    <button class="lang-btn" onclick="setLang('pt')" data-lang="pt" title="Portugu&ecirc;s">&#127463;&#127479; PT</button>
+    <button class="lang-btn" onclick="setLang('zh')" data-lang="zh" title="中文">&#127464;&#127475; 中文</button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <a href="index.html" class="back-home">&#8592; Back to Home</a>
+
+  <section class="page-section" id="sec-register">
+    <h2 class="section-heading" data-i18n="reg_title">Pre-Arrival <span class="gold-accent">Registration Form</span></h2>
+    <p class="section-subheading" data-i18n="reg_sub">Express your interest before you arrive in Ireland. We will connect you with the right clubs and help you settle in.</p>
+    <div class="reg-intro" data-i18n="reg_intro">This form is completely free and takes less than 2 minutes to complete. Submitting this form does not commit you to joining any club — it simply helps us prepare for your arrival.</div>
+
+    <div class="form-success" id="inline-reg-success">
+      <div class="form-success-icon">&#127881;</div>
+      <h3 data-i18n="reg_thanks_t">Thank you for registering!</h3>
+      <p data-i18n="reg_thanks_b">We have received your details and will be in touch before your arrival in Carlow.</p>
+    </div>
+
+    <form id="inline-reg-form" onsubmit="submitInlineRegistration(event)" novalidate>
+      <div class="form-row-2">
+        <div class="form-row">
+          <label for="ireg-fname" data-i18n="reg_fname">Full Name *</label>
+          <input type="text" id="ireg-fname" required placeholder="e.g. Maria Garc&iacute;a">
+          <div class="form-error" id="err-fname">Please enter your name</div>
+        </div>
+        <div class="form-row">
+          <label for="ireg-nationality">Nationality *</label>
+          <input type="text" id="ireg-nationality" required placeholder="e.g. Brazilian">
+          <div class="form-error" id="err-nationality">Please enter your nationality</div>
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-row">
+          <label for="ireg-age" data-i18n="reg_age">Age *</label>
+          <input type="number" id="ireg-age" required min="5" max="26" placeholder="e.g. 15">
+          <div class="form-error" id="err-age">Age must be 5–26</div>
+        </div>
+        <div class="form-row">
+          <label for="ireg-email" data-i18n="reg_email">Email Address *</label>
+          <input type="email" id="ireg-email" required placeholder="your@email.com">
+          <div class="form-error" id="err-email">Please enter a valid email</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Which club(s) are you interested in? *</label>
+        <div class="clubs-checkbox-grid">
+          <label><input type="checkbox" name="clubs" value="GAA Football"> GAA Football</label>
+          <label><input type="checkbox" name="clubs" value="Hurling"> Hurling / Camogie</label>
+          <label><input type="checkbox" name="clubs" value="Soccer"> Soccer</label>
+          <label><input type="checkbox" name="clubs" value="Basketball"> Basketball</label>
+          <label><input type="checkbox" name="clubs" value="Athletics"> Athletics</label>
+          <label><input type="checkbox" name="clubs" value="Swimming"> Swimming</label>
+          <label><input type="checkbox" name="clubs" value="Dance"> Dance</label>
+          <label><input type="checkbox" name="clubs" value="Music"> Music</label>
+          <label><input type="checkbox" name="clubs" value="Drama"> Drama &amp; Theatre</label>
+          <label><input type="checkbox" name="clubs" value="Martial Arts"> Martial Arts</label>
+          <label><input type="checkbox" name="clubs" value="Chess"> Chess</label>
+          <label><input type="checkbox" name="clubs" value="Other"> Other / Not sure yet</label>
+        </div>
+        <div class="form-error" id="err-clubs">Please select at least one club</div>
+      </div>
+      <div class="form-row">
+        <label for="ireg-arrival" data-i18n="reg_arrival">Expected Arrival Date in Ireland</label>
+        <input type="date" id="ireg-arrival">
+      </div>
+      <div class="form-row">
+        <label for="ireg-english" data-i18n="reg_english">Current Level of English</label>
+        <select id="ireg-english">
+          <option value="">— Select level —</option>
+          <option>Basic (very little English)</option>
+          <option>Intermediate (everyday communication)</option>
+          <option>Fluent (confident in English)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="ireg-notes" data-i18n="reg_notes">Any Questions or Comments?</label>
+        <textarea id="ireg-notes" placeholder="e.g. I have never played before. / Do I need equipment? / I use a wheelchair."></textarea>
+      </div>
+      <button class="form-submit" type="submit" style="background:var(--primary);">
+        &#128231; <span data-i18n="reg_submit">Submit Registration</span>
+      </button>
+    </form>
+  </section>
+</div>
+
+<footer class="footer" style="border-top:3px solid var(--gold);">
+  <span data-i18n="footer_text">GAA &amp; Youth Activities Guide &middot; County Carlow, Ireland &middot; Welcoming International Students</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
