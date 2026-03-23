@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterford Youth Club</title>
+    <style>
+        :root {
+            --main-green: #166b3a;
+            --light-green: #1f8a4c;
+            --gold: #d4a017;
+            --background: #f7f9f5;
+        }
+        body {
+            font-family: Georgia, serif;
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: var(--main-green);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .location-switcher {
+            margin-bottom: 1rem;
+        }
+        button {
+            background-color: var(--light-green);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: var(--gold);
+        }
+        .pdf-viewer {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        /* Additional styles for mobile responsiveness, gallery, etc. */
+    </style>
+    <script>
+        // Vanilla JS for SPA navigation and dynamic interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const locationSwitcher = document.querySelector('.location-switcher');
+            // Implement switching logic here
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="location-switcher">
+            <button onclick="switchLocation('Carlow')">Carlow</button>
+            <button onclick="switchLocation('Waterford')">Waterford</button>
+            <button onclick="switchLocation('Kilkenny')">Kilkenny</button>
+            <button onclick="switchLocation('Thurles')">Thurles</button>
+        </div>
+        <h1>Welcome to Waterford Youth Club</h1>
+        <p>Your guide to youth activities in Waterford.</p>
+        <button>Browse the Full Guide</button>
+        <button>Club Contacts</button>
+    </header>
+    <main>
+        <section class="stats-bar">
+            <!-- Stats content goes here -->
+        </section>
+        <section class="activities">
+            <!-- Home activities with age filters goes here -->
+        </section>
+        <section class="pdf-viewer">
+            <iframe src="Youth-Clubs-and-Activities-in-Waterford.pdf" width="100%" height="600px"></iframe>
+        </section>
+        <section class="faq">
+            <!-- FAQ accordion goes here -->
+        </section>
+        <section class="events-cards">
+            <!-- Events cards go here -->
+        </section>
+        <section class="gallery">
+            <!-- Gallery with hover effects goes here -->
+        </section>
+        <section class="testimonials-slider">
+            <!-- Testimonials slider goes here -->
+        </section>
+        <section class="leaflet-map">
+            <!-- Leaflet map goes here -->
+        </section>
+    </main>
+    <script>
+        // Additional JS for functionalities: modal open/close, dynamic filters, live search, etc.
+    </script>
+</body>
+</html>
